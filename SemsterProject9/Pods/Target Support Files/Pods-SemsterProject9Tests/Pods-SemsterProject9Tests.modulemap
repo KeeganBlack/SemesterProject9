@@ -1,0 +1,6 @@
+framework module Pods_SemsterProject9Tests {
+  umbrella header "Pods-SemsterProject9Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
