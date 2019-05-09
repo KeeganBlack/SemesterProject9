@@ -10,6 +10,9 @@ import Foundation
 
 class SwiftLibObj {
     
+    let title: String = "My Awesome SwiftLib"
+    let author: String = "Keegan"
+    let score = 0
     let arguments : [String] = [];
     let story : [String] = [];
     

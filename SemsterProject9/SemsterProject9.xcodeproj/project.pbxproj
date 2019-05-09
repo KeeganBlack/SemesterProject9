@@ -13,6 +13,8 @@
 		83AD0256226FCA8600B0907A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83AD0254226FCA8600B0907A /* GoogleService-Info.plist */; };
 		83AD0257226FCA8600B0907A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83AD0254226FCA8600B0907A /* GoogleService-Info.plist */; };
 		83AD02592280FFF200B0907A /* SwiftLibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */; };
+		83AD025F2281300100B0907A /* SemsterProject9 in Resources */ = {isa = PBXBuildFile; fileRef = 83AD025E2281300100B0907A /* SemsterProject9 */; };
+		83AD02612281307000B0907A /* SwiftLibTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD02602281307000B0907A /* SwiftLibTableViewController.swift */; };
 		B0C5FFFE19024C79CE6BE9E7 /* Pods_SemsterProject9UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9732A78E5511089C978328E4 /* Pods_SemsterProject9UITests.framework */; };
 		CEF79554226C95D00013EF9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF79553226C95D00013EF9C /* AppDelegate.swift */; };
 		CEF79556226C95D00013EF9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF79555226C95D00013EF9C /* ViewController.swift */; };
@@ -22,7 +24,6 @@
 		CEF79569226C95D20013EF9C /* SemsterProject9Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF79568226C95D20013EF9C /* SemsterProject9Tests.swift */; };
 		CEF79574226C95D20013EF9C /* SemsterProject9UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF79573226C95D20013EF9C /* SemsterProject9UITests.swift */; };
 		CEF79582226C96110013EF9C /* SwiftLibObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF79581226C96110013EF9C /* SwiftLibObj.swift */; };
-		CEF79586226C978E0013EF9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF79585226C978E0013EF9C /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		7EE8C51C5C28C52275F15DE1 /* Pods-SemsterProject9UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9UITests.release.xcconfig"; path = "Target Support Files/Pods-SemsterProject9UITests/Pods-SemsterProject9UITests.release.xcconfig"; sourceTree = "<group>"; };
 		83AD0254226FCA8600B0907A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLibTableViewCell.swift; sourceTree = "<group>"; };
+		83AD025E2281300100B0907A /* SemsterProject9 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SemsterProject9; sourceTree = "<group>"; };
+		83AD02602281307000B0907A /* SwiftLibTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLibTableViewController.swift; sourceTree = "<group>"; };
 		846FE2F69E4EAC3221EE9D0C /* Pods-SemsterProject9Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9Tests.debug.xcconfig"; path = "Target Support Files/Pods-SemsterProject9Tests/Pods-SemsterProject9Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9732A78E5511089C978328E4 /* Pods_SemsterProject9UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SemsterProject9UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0BEF40988A4D9421B07EE8B /* Pods_SemsterProject9Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SemsterProject9Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +69,6 @@
 		CEF79573226C95D20013EF9C /* SemsterProject9UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemsterProject9UITests.swift; sourceTree = "<group>"; };
 		CEF79575226C95D20013EF9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF79581226C96110013EF9C /* SwiftLibObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLibObj.swift; sourceTree = "<group>"; };
-		CEF79585226C978E0013EF9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D203E35BB5885981C2FAE42C /* Pods_SemsterProject9.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SemsterProject9.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73FCBF6FA08777963F3FE3C /* Pods-SemsterProject9.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9.release.xcconfig"; path = "Target Support Files/Pods-SemsterProject9/Pods-SemsterProject9.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,8 +126,8 @@
 		CEF79552226C95D00013EF9C /* SemsterProject9 */ = {
 			isa = PBXGroup;
 			children = (
+				83AD025E2281300100B0907A /* SemsterProject9 */,
 				CEF79553226C95D00013EF9C /* AppDelegate.swift */,
-				CEF79585226C978E0013EF9C /* HomeView.swift */,
 				CEF79557226C95D00013EF9C /* Main.storyboard */,
 				83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */,
 				CEF79581226C96110013EF9C /* SwiftLibObj.swift */,
@@ -133,6 +135,7 @@
 				CEF7955A226C95D10013EF9C /* Assets.xcassets */,
 				CEF7955C226C95D10013EF9C /* LaunchScreen.storyboard */,
 				CEF7955F226C95D10013EF9C /* Info.plist */,
+				83AD02602281307000B0907A /* SwiftLibTableViewController.swift */,
 				83AD0254226FCA8600B0907A /* GoogleService-Info.plist */,
 			);
 			path = SemsterProject9;
@@ -291,6 +294,7 @@
 				83AD0255226FCA8600B0907A /* GoogleService-Info.plist in Resources */,
 				CEF7955B226C95D10013EF9C /* Assets.xcassets in Resources */,
 				CEF79559226C95D00013EF9C /* Main.storyboard in Resources */,
+				83AD025F2281300100B0907A /* SemsterProject9 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,8 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83AD02612281307000B0907A /* SwiftLibTableViewController.swift in Sources */,
 				CEF79556226C95D00013EF9C /* ViewController.swift in Sources */,
-				CEF79586226C978E0013EF9C /* HomeView.swift in Sources */,
 				CEF79554226C95D00013EF9C /* AppDelegate.swift in Sources */,
 				CEF79582226C96110013EF9C /* SwiftLibObj.swift in Sources */,
 				83AD02592280FFF200B0907A /* SwiftLibTableViewCell.swift in Sources */,
