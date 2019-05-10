@@ -41,25 +41,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
-                                <rect key="frame" x="91" y="211" width="193" height="432"/>
+                                <rect key="frame" x="91" y="211" width="258" height="432"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
-                                        <rect key="frame" x="0.0" y="0.0" width="193" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Create a SwiftLib"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
-                                        <rect key="frame" x="0.0" y="194" width="193" height="44"/>
+                                        <rect key="frame" x="0.0" y="194" width="258" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Search SwiftLibs"/>
+                                        <state key="normal" title="Search Other SwiftLibs"/>
                                         <connections>
-                                            <segue destination="Bbn-dP-nsm" kind="show" id="oc9-cQ-A7Y"/>
+                                            <segue destination="Bbn-dP-nsm" kind="show" id="ygl-D3-bou"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-f6-cUc">
-                                        <rect key="frame" x="0.0" y="388" width="193" height="44"/>
+                                        <rect key="frame" x="0.0" y="388" width="258" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Browse SwiftLibs"/>
+                                        <state key="normal" title="Browse My SwiftLibs"/>
                                         <connections>
                                             <segue destination="dYy-Qi-Vre" kind="show" id="Z8j-l6-gw5"/>
                                         </connections>
@@ -110,11 +110,11 @@
             </objects>
             <point key="canvasLocation" x="17" y="322"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Browse Other SwiftLibs-->
         <scene sceneID="KtW-e6-CWm">
             <objects>
-                <tableViewController id="Bbn-dP-nsm" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cbf-IH-8so">
+                <tableViewController id="Bbn-dP-nsm" customClass="SwiftLibTableViewController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cbf-IH-8so">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -142,7 +142,7 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SwiftLib Title " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-Yl-ppK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -155,17 +155,18 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0ww-Jj-E1w" secondAttribute="trailing" constant="50" id="0fJ-Y5-mLK"/>
                                     <constraint firstItem="0ww-Jj-E1w" firstAttribute="centerY" secondItem="n4c-zA-Zkv" secondAttribute="centerY" id="1Lh-8z-dZr"/>
                                     <constraint firstItem="jHS-Yl-ppK" firstAttribute="leading" secondItem="n4c-zA-Zkv" secondAttribute="leading" id="28O-42-wb1"/>
                                     <constraint firstAttribute="bottom" secondItem="elm-FW-VX6" secondAttribute="bottom" id="GyY-ig-Yds"/>
                                     <constraint firstItem="elm-FW-VX6" firstAttribute="leading" secondItem="n4c-zA-Zkv" secondAttribute="leading" id="eEZ-QK-JX2"/>
-                                    <constraint firstAttribute="trailing" secondItem="0ww-Jj-E1w" secondAttribute="trailing" id="gVw-pO-uaR"/>
                                     <constraint firstItem="jHS-Yl-ppK" firstAttribute="top" secondItem="n4c-zA-Zkv" secondAttribute="top" id="zql-oG-02i"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="authorOutlet" destination="elm-FW-VX6" id="7eT-lS-5iY"/>
                                     <outlet property="scoreOutlet" destination="0ww-Jj-E1w" id="9lw-wq-JyJ"/>
                                     <outlet property="titleOutlet" destination="jHS-Yl-ppK" id="X4L-Ht-bsE"/>
+                                    <segue destination="fwa-VA-878" kind="show" id="JTA-Pl-13R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -174,6 +175,7 @@
                             <outlet property="delegate" destination="Bbn-dP-nsm" id="xVP-SB-Ltz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Browse Other SwiftLibs" id="tRn-iC-lgc"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="kSG-xX-qlv" id="eBF-5P-RnU"/>
                     </connections>
@@ -189,7 +191,30 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="-492.50374812593708"/>
+            <point key="canvasLocation" x="1044" y="-493"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Abu-96-tec">
+            <objects>
+                <viewController id="fwa-VA-878" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZWx-Mv-Vq6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyn-3L-x5b">
+                                <rect key="frame" x="132" y="527" width="110" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Co-91-s8D"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xv7-um-8Vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="322"/>
         </scene>
     </scenes>
 </document>

@@ -10,10 +10,16 @@ import Foundation
 
 class SwiftLibObj {
     
-    let title: String = "My Awesome SwiftLib"
-    let author: String = "Keegan"
-    let score = 0
-    let arguments : [String] = [];
-    let story : [String] = [];
+    let title: String
+    let author: String
+    let score: Int
+    let arguments : [String] = ["Noun","Noun","Noun"];
+    let story : [String] = ["I took my","a walk and saw a"];
+    
+    init(title: String, author: String, score: Int) {
+        self.title = title;
+        self.author = author;
+        self.score = score;
+    }
     
 }

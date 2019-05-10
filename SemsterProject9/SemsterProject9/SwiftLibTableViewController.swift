@@ -7,10 +7,38 @@
 //
 
 import UIKit
+import os.log
+import Firebase
 
 class SwiftLibTableViewController: UITableViewController {
 
-    var swiftLibs: [SwiftLibObj] = [SwiftLibObj()]
+    var swiftLibs: [SwiftLibObj] = []
+    
+    let rootRef = Database.database().reference()
+    
+    
+    
+    func loadSwiftLibs(){
+
+        
+        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", score: 100)
+        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", score: 100)
+        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", score: 100)
+        let tempLibs = [lib1,lib2,lib3]
+        for lib in tempLibs {
+            saveToFirebase(lib: lib)
+        }
+       
+        
+    }
+    
+    func saveToFirebase(lib : SwiftLibObj) {
+        let usersRef = rootRef.child("Users")
+        let user = usersRef.child(lib.author)
+        let values = ["Titlte":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
+        user.setValue(values)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +48,15 @@ class SwiftLibTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadSwiftLibs()
+
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,14 +113,5 @@ class SwiftLibTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
