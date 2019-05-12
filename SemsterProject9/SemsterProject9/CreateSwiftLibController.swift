@@ -11,4 +11,14 @@ import UIKit
 
 class CreateSwiftLibController : UIViewController {
     
+    @IBOutlet weak var TitleAction: UITextField!
+    
+    @IBOutlet weak var SwiftLibStory: UITextView!
+    
+    @IBAction func InsertBlank(_ sender: Any) {
+    }
+    
+    @IBAction func SubmitSwiftLib(_ sender: Any) {
+    }
+    
 }
