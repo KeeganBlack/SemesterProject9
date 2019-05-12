@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1688666DC45BC706210C517B /* Pods_SemsterProject9Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BEF40988A4D9421B07EE8B /* Pods_SemsterProject9Tests.framework */; };
+		3325957A2287B80600178F47 /* CreateSwiftLibController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332595792287B80600178F47 /* CreateSwiftLibController.swift */; };
 		47A2D79926897ECE6EC7B6F8 /* Pods_SemsterProject9.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D203E35BB5885981C2FAE42C /* Pods_SemsterProject9.framework */; };
 		83AD02592280FFF200B0907A /* SwiftLibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */; };
 		83AD02612281307000B0907A /* SwiftLibTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD02602281307000B0907A /* SwiftLibTableViewController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		089DBEAEA2E7EDC5F7D43166 /* Pods-SemsterProject9.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9.debug.xcconfig"; path = "Target Support Files/Pods-SemsterProject9/Pods-SemsterProject9.debug.xcconfig"; sourceTree = "<group>"; };
+		332595792287B80600178F47 /* CreateSwiftLibController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSwiftLibController.swift; sourceTree = "<group>"; };
 		4F9ECFEF0A48E4580CDAA14A /* Pods-SemsterProject9Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9Tests.release.xcconfig"; path = "Target Support Files/Pods-SemsterProject9Tests/Pods-SemsterProject9Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7EE8C51C5C28C52275F15DE1 /* Pods-SemsterProject9UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9UITests.release.xcconfig"; path = "Target Support Files/Pods-SemsterProject9UITests/Pods-SemsterProject9UITests.release.xcconfig"; sourceTree = "<group>"; };
 		83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLibTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				CEF7955F226C95D10013EF9C /* Info.plist */,
 				83AD02602281307000B0907A /* SwiftLibTableViewController.swift */,
 				83AD02AF228602FF00B0907A /* GoogleService-Info.plist */,
+				332595792287B80600178F47 /* CreateSwiftLibController.swift */,
 			);
 			path = SemsterProject9;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				CEF79554226C95D00013EF9C /* AppDelegate.swift in Sources */,
 				CEF79582226C96110013EF9C /* SwiftLibObj.swift in Sources */,
 				83AD02592280FFF200B0907A /* SwiftLibTableViewCell.swift in Sources */,
+				3325957A2287B80600178F47 /* CreateSwiftLibController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
