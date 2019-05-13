@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ege-rl-XEf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ege-rl-XEf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,12 +41,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
-                                <rect key="frame" x="91" y="211" width="258" height="432"/>
+                                <rect key="frame" x="58" y="195" width="258" height="432"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
                                         <rect key="frame" x="0.0" y="0.0" width="258" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Create a SwiftLib"/>
+                                        <connections>
+                                            <segue destination="Nrh-sB-j2S" kind="showDetail" id="xKV-FD-9Ci"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
                                         <rect key="frame" x="0.0" y="194" width="258" height="44"/>
@@ -81,6 +84,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16.800000000000001" y="-492.50374812593708"/>
+        </scene>
+        <!--Create Swift Lib Controller-->
+        <scene sceneID="7f7-t9-fQV">
+            <objects>
+                <viewController id="Nrh-sB-j2S" customClass="CreateSwiftLibController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hkz-rI-zmH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Your Story!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0FW-fV-i19">
+                                <rect key="frame" x="67" y="110.5" width="241" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnR-Ez-r6Y">
+                                <rect key="frame" x="143" y="468" width="89" height="30"/>
+                                <state key="normal" title="Insert Blank"/>
+                                <connections>
+                                    <action selector="InsertBlank:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="rLv-lb-DyN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAP-2l-RCg">
+                                <rect key="frame" x="284" y="588" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="SubmitSwiftLib:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="bVh-nr-0Db"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpA-pN-EQu">
+                                <rect key="frame" x="44" y="588" width="49" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="ClearTextAction:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="Zfd-6q-k8M"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-d6-jJh">
+                                <rect key="frame" x="166" y="525" width="42" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Title Here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9HS-VE-74T">
+                                <rect key="frame" x="108" y="70" width="159" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JpA-pN-EQu" firstAttribute="width" secondItem="vAP-2l-RCg" secondAttribute="width" id="31h-XP-Nr8"/>
+                            <constraint firstItem="0FW-fV-i19" firstAttribute="firstBaseline" secondItem="9HS-VE-74T" secondAttribute="baseline" constant="21" symbolType="layoutAnchor" id="3Ly-sL-x6Y"/>
+                            <constraint firstItem="gAe-d6-jJh" firstAttribute="top" secondItem="KnR-Ez-r6Y" secondAttribute="bottom" constant="27" id="8ZW-gf-GkT"/>
+                            <constraint firstItem="gAe-d6-jJh" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="AGa-8N-rVj"/>
+                            <constraint firstItem="0FW-fV-i19" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="EpZ-y6-7b2"/>
+                            <constraint firstItem="KnR-Ez-r6Y" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="Jy3-Wg-qCM"/>
+                            <constraint firstItem="JpA-pN-EQu" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="44" id="O2z-Bh-FGq"/>
+                            <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="JpA-pN-EQu" secondAttribute="bottom" constant="49" id="PTd-X9-juM"/>
+                            <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="gAe-d6-jJh" secondAttribute="bottom" constant="105" id="Vrg-xc-4Qr"/>
+                            <constraint firstItem="JpA-pN-EQu" firstAttribute="height" secondItem="vAP-2l-RCg" secondAttribute="height" id="b19-43-aRu"/>
+                            <constraint firstItem="9HS-VE-74T" firstAttribute="top" secondItem="agt-WD-XB2" secondAttribute="top" constant="50" id="cbK-lI-g1p"/>
+                            <constraint firstItem="KnR-Ez-r6Y" firstAttribute="top" secondItem="0FW-fV-i19" secondAttribute="bottom" constant="34" id="f0O-ci-hmt"/>
+                            <constraint firstItem="agt-WD-XB2" firstAttribute="trailing" secondItem="vAP-2l-RCg" secondAttribute="trailing" constant="42" id="nxm-LS-aaX"/>
+                            <constraint firstItem="9HS-VE-74T" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="oHW-iU-7q3"/>
+                            <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="vAP-2l-RCg" secondAttribute="bottom" constant="49" id="ug1-yr-vZg"/>
+                            <constraint firstItem="0FW-fV-i19" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="67" id="xVy-Gt-3nH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="agt-WD-XB2"/>
+                    </view>
+                    <connections>
+                        <outlet property="ClearButtonOutlet" destination="JpA-pN-EQu" id="ui0-or-Y1X"/>
+                        <outlet property="InsertButton" destination="KnR-Ez-r6Y" id="Swl-sU-rJl"/>
+                        <outlet property="Label" destination="gAe-d6-jJh" id="K32-Zl-a9W"/>
+                        <outlet property="SubmitButtonOutlet" destination="vAP-2l-RCg" id="TTi-Xi-ln0"/>
+                        <outlet property="SwiftLibStory" destination="0FW-fV-i19" id="0bC-AK-5up"/>
+                        <outlet property="TitleAction" destination="9HS-VE-74T" id="e1j-5w-HrK"/>
+                        <outletCollection property="ActionButtons" destination="KnR-Ez-r6Y" collectionClass="NSMutableArray" id="gNd-1J-gD2"/>
+                        <outletCollection property="ActionButtons" destination="JpA-pN-EQu" collectionClass="NSMutableArray" id="x7C-aI-gyE"/>
+                        <outletCollection property="ActionButtons" destination="vAP-2l-RCg" collectionClass="NSMutableArray" id="t9c-xq-4mJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9EZ-ap-Jj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-852" y="321.58920539730138"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="cR7-6r-GIw">
