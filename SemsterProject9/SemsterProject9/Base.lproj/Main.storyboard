@@ -34,13 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SwiftLibs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gB1-WG-TaW">
-                                <rect key="frame" x="78" y="64" width="219" height="57"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
                                 <rect key="frame" x="58" y="195" width="258" height="432"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
@@ -69,12 +63,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Br-sX-Bfi" customClass="AppImageView" customModule="SemsterProject9" customModuleProvider="target">
+                                <rect key="frame" x="58" y="64" width="113" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gB1-WG-TaW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1JP-gS-Wt7"/>
-                            <constraint firstItem="gB1-WG-TaW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="DcV-UD-mys"/>
-                            <constraint firstItem="yvS-Ng-coW" firstAttribute="top" secondItem="gB1-WG-TaW" secondAttribute="bottom" constant="90" id="fxM-5y-7M8"/>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zMm-JG-dOR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -306,4 +302,7 @@
             <point key="canvasLocation" x="1143" y="322"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon.png" width="670" height="712"/>
+    </resources>
 </document>

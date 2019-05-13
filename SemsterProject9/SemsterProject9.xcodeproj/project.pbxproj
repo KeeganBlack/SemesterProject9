@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1688666DC45BC706210C517B /* Pods_SemsterProject9Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BEF40988A4D9421B07EE8B /* Pods_SemsterProject9Tests.framework */; };
+		3315A7392289F766001A5E59 /* AppImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3315A7382289F766001A5E59 /* AppImageView.swift */; };
+		3315A73B2289F8BF001A5E59 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3315A73A2289F8BF001A5E59 /* AppIcon.png */; };
 		3325957A2287B80600178F47 /* CreateSwiftLibController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332595792287B80600178F47 /* CreateSwiftLibController.swift */; };
 		47A2D79926897ECE6EC7B6F8 /* Pods_SemsterProject9.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D203E35BB5885981C2FAE42C /* Pods_SemsterProject9.framework */; };
 		83AD02592280FFF200B0907A /* SwiftLibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		089DBEAEA2E7EDC5F7D43166 /* Pods-SemsterProject9.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9.debug.xcconfig"; path = "Target Support Files/Pods-SemsterProject9/Pods-SemsterProject9.debug.xcconfig"; sourceTree = "<group>"; };
+		3315A7382289F766001A5E59 /* AppImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImageView.swift; sourceTree = "<group>"; };
+		3315A73A2289F8BF001A5E59 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		332595792287B80600178F47 /* CreateSwiftLibController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSwiftLibController.swift; sourceTree = "<group>"; };
 		4F9ECFEF0A48E4580CDAA14A /* Pods-SemsterProject9Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9Tests.release.xcconfig"; path = "Target Support Files/Pods-SemsterProject9Tests/Pods-SemsterProject9Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7EE8C51C5C28C52275F15DE1 /* Pods-SemsterProject9UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SemsterProject9UITests.release.xcconfig"; path = "Target Support Files/Pods-SemsterProject9UITests/Pods-SemsterProject9UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		CEF79552226C95D00013EF9C /* SemsterProject9 */ = {
 			isa = PBXGroup;
 			children = (
+				3315A73A2289F8BF001A5E59 /* AppIcon.png */,
 				CEF79553226C95D00013EF9C /* AppDelegate.swift */,
 				CEF79557226C95D00013EF9C /* Main.storyboard */,
 				83AD02582280FFF200B0907A /* SwiftLibTableViewCell.swift */,
@@ -135,6 +140,7 @@
 				83AD02602281307000B0907A /* SwiftLibTableViewController.swift */,
 				83AD02AF228602FF00B0907A /* GoogleService-Info.plist */,
 				332595792287B80600178F47 /* CreateSwiftLibController.swift */,
+				3315A7382289F766001A5E59 /* AppImageView.swift */,
 			);
 			path = SemsterProject9;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				CEF7955E226C95D10013EF9C /* LaunchScreen.storyboard in Resources */,
 				83AD02B0228602FF00B0907A /* GoogleService-Info.plist in Resources */,
 				CEF7955B226C95D10013EF9C /* Assets.xcassets in Resources */,
+				3315A73B2289F8BF001A5E59 /* AppIcon.png in Resources */,
 				CEF79559226C95D00013EF9C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AD02612281307000B0907A /* SwiftLibTableViewController.swift in Sources */,
+				3315A7392289F766001A5E59 /* AppImageView.swift in Sources */,
 				CEF79556226C95D00013EF9C /* ViewController.swift in Sources */,
 				CEF79554226C95D00013EF9C /* AppDelegate.swift in Sources */,
 				CEF79582226C96110013EF9C /* SwiftLibObj.swift in Sources */,
