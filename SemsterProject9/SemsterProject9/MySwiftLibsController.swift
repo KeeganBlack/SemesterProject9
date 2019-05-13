@@ -70,7 +70,7 @@ class MySwiftLibTableViewController: UITableViewController {
     func showInputDialog() {
         //Creating UIAlertController and
         //Setting title and message for the alert dialog
-        let alertController = UIAlertController(title: "What is your Username?", message: "Please enter the Username you would like to view.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "What Username?", message: "Please enter the Username you would like filter by.", preferredStyle: .alert)
         
         //the confirm action taking the inputs
         let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
