@@ -21,9 +21,9 @@ class SwiftLibTableViewController: UITableViewController {
     
     
     func loadSwiftLibs(){
-        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", score: 100)
-        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", score: 100)
-        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", score: 100)
+        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I had a", "and it was great for my"])
+        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding is swift is", "mostly because the", "is too", "or just plain confusing!"])
+        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's easy. The end."])
         let tempLibs = [lib1,lib2,lib3]
         for lib in tempLibs {
             saveToFirebase(lib: lib)
