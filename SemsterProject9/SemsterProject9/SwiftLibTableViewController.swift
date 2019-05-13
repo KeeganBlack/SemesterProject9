@@ -38,7 +38,7 @@ class SwiftLibTableViewController: UITableViewController {
         user.setValue(values)
     }
     
-    func loadUsersFromFireBase(completionHandler:@escaping (_ libArray: [SwiftLibObj]?)->()) {
+    func loadFromFireBase(completionHandler:@escaping (_ libArray: [SwiftLibObj]?)->()) {
         let childRef = rootRef.child("Users")
         var tempUsers = [String]()
         childRef.observe(.value, with: { (snapshot) in
@@ -70,7 +70,7 @@ class SwiftLibTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        loadUsersFromFireBase { libArray in
+        loadFromFireBase { libArray in
             self.swiftLibs = libArray ?? []
             self.tableView.reloadData()
         }

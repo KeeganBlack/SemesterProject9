@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SemsterProject9/SwiftLibTableViewController.swift"
-            timestampString = "579470946.581127"
+            timestampString = "579473632.867885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "loadUsersFromFireBase(completionHandler:)"
+            landmarkName = "loadFromFireBase(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SemsterProject9/SwiftLibTableViewController.swift"
-            timestampString = "579470946.581774"
+            timestampString = "579473632.8694381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "loadUsersFromFireBase(completionHandler:)"
+            landmarkName = "loadFromFireBase(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SemsterProject9/SwiftLibTableViewController.swift"
-            timestampString = "579470946.58225"
+            timestampString = "579473632.869856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
             endingLineNumber = "45"
-            landmarkName = "loadUsersFromFireBase(completionHandler:)"
+            landmarkName = "loadFromFireBase(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SemsterProject9/SwiftLibTableViewController.swift"
-            timestampString = "579470946.58277"
+            timestampString = "579473632.870369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"

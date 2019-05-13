@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ege-rl-XEf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ege-rl-XEf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,8 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
-                                <rect key="frame" x="58" y="195" width="258" height="432"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
+                                <rect key="frame" x="58.5" y="209" width="258" height="432"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
                                         <rect key="frame" x="0.0" y="0.0" width="258" height="44"/>
@@ -56,7 +56,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-f6-cUc">
                                         <rect key="frame" x="0.0" y="388" width="258" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Browse My SwiftLibs"/>
+                                        <state key="normal" title="Browse By Username"/>
                                         <connections>
                                             <segue destination="dYy-Qi-Vre" kind="show" id="Z8j-l6-gw5"/>
                                         </connections>
@@ -71,6 +71,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yvS-Ng-coW" secondAttribute="bottom" constant="26" id="sEK-sM-Sma"/>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zMm-JG-dOR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -166,22 +167,59 @@
             </objects>
             <point key="canvasLocation" x="-852" y="321.58920539730138"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Swift Lib Table View Controller-->
         <scene sceneID="cR7-6r-GIw">
             <objects>
-                <tableViewController id="dYy-Qi-Vre" sceneMemberID="viewController">
+                <tableViewController id="dYy-Qi-Vre" customClass="MySwiftLibTableViewController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V1D-Nc-hpQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UFo-0a-Otu">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwiftLibTableViewCell" rowHeight="80" id="HFR-eh-FbA" customClass="SwiftLibTableViewCell" customModule="SemsterProject9" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UFo-0a-Otu" id="DfJ-GE-jbR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HFR-eh-FbA" id="fx0-6w-cKq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvF-MD-f0u">
+                                            <rect key="frame" x="243" y="30" width="82" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SwiftLib Title " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHm-6o-CjD">
+                                            <rect key="frame" x="0.0" y="0.0" width="181.5" height="35"/>
+                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By: Test User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgH-Y2-tRO">
+                                            <rect key="frame" x="0.0" y="59" width="101.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="WvF-MD-f0u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YHm-6o-CjD" secondAttribute="trailing" constant="8" symbolic="YES" id="KRL-xC-KzS"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mgH-Y2-tRO" secondAttribute="trailing" constant="20" symbolic="YES" id="rDP-ee-EHB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="mgH-Y2-tRO" firstAttribute="leading" secondItem="HFR-eh-FbA" secondAttribute="leading" id="08Z-t8-WgO"/>
+                                    <constraint firstItem="WvF-MD-f0u" firstAttribute="centerY" secondItem="HFR-eh-FbA" secondAttribute="centerY" id="0Dz-n1-g3U"/>
+                                    <constraint firstAttribute="bottom" secondItem="mgH-Y2-tRO" secondAttribute="bottom" id="Co4-O0-R8j"/>
+                                    <constraint firstItem="YHm-6o-CjD" firstAttribute="top" secondItem="HFR-eh-FbA" secondAttribute="top" id="MCD-Hc-Rnx"/>
+                                    <constraint firstItem="YHm-6o-CjD" firstAttribute="leading" secondItem="HFR-eh-FbA" secondAttribute="leading" id="Tf3-HP-Q13"/>
+                                    <constraint firstAttribute="trailing" secondItem="WvF-MD-f0u" secondAttribute="trailing" constant="50" id="q7F-hI-cm1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="authorOutlet" destination="mgH-Y2-tRO" id="ecJ-Hk-vZj"/>
+                                    <outlet property="scoreOutlet" destination="WvF-MD-f0u" id="ywR-dW-RfF"/>
+                                    <outlet property="titleOutlet" destination="YHm-6o-CjD" id="0cB-D5-g5X"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -303,6 +341,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppIcon.png" width="670" height="712"/>
+        <image name="AppIcon.png" width="335" height="356"/>
     </resources>
 </document>
