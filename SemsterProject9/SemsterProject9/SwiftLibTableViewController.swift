@@ -18,7 +18,7 @@ class SwiftLibTableViewController: UITableViewController {
     var swiftLibs: [SwiftLibObj] = []
     let rootRef = Database.database().reference()
     var users = [String]()
-    
+    typealias LibArrayClosure = (Array<SwiftLibObj>?) -> Void
     
     func loadSwiftLibs(){
         let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I had a", "and it was great for my"])
@@ -34,27 +34,31 @@ class SwiftLibTableViewController: UITableViewController {
     func saveToFirebase(lib : SwiftLibObj) {
         let usersRef = rootRef.child("Users")
         let user = usersRef.child(lib.author)
-        let values = ["Titlte":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
+        let values = ["Title":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
         user.setValue(values)
     }
     
-    func getAllUsers() -> [String] {
+    func loadUsersFromFireBase(completionHandler:@escaping (_ libArray: [SwiftLibObj]?)->()) {
         let childRef = rootRef.child("Users")
-
-       /* childRef.observe( .value, with: { (snapshot) in
-            let values = snapshot.value as? NSDictionary
-            let count = values!.count
-            for i in 0...count {
-                self.users.append(values![i] as? String ?? "")
+        var tempUsers = [String]()
+        childRef.observe(.value, with: { (snapshot) in
+            let userDict = snapshot.value as! [String: Any]
+            var libs: [SwiftLibObj] = []
+            for user in userDict.keys {
+                tempUsers.append(user)
             }
-            
+            for user in tempUsers {
+                let userSnap = snapshot.childSnapshot(forPath: user)
+                let values = userSnap.value as! [String: Any]
+                let lib = SwiftLibObj(title: values["Title"] as! String, author: user, story: values["Story"] as! [String], score: values["Score"] as! Int)
+                libs.append(lib)
+            }
+            if libs.isEmpty {
+                completionHandler(nil)
+            }else {
+                completionHandler(libs)
+            }
         })
-        print(users)*/
-        rootRef.child("Users").observeSingleEvent(of: .value) { (snapshot) in
-            //print(snapshot.key)
-            print(snapshot.value)
-        }
-        return users
     }
     
     
@@ -66,8 +70,10 @@ class SwiftLibTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        loadSwiftLibs()
-        getAllUsers()
+        loadUsersFromFireBase { libArray in
+            self.swiftLibs = libArray ?? []
+            self.tableView.reloadData()
+        }
         tableView.dataSource = self
     }
 
