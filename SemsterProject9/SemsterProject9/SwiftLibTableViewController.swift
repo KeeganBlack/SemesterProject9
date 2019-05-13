@@ -21,10 +21,11 @@ class SwiftLibTableViewController: UITableViewController {
     typealias LibArrayClosure = (Array<SwiftLibObj>?) -> Void
     
     func loadSwiftLibs(){
-        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I had a", "and it was great for my"])
-        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding is swift is", "mostly because the", "is too", "or just plain confusing!"])
-        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's easy. The end."])
-        let tempLibs = [lib1,lib2,lib3]
+        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I had a", "and it was great for my"], score: 0, args: ["test"])
+        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding is swift is", "mostly because the", "is too", "or just plain confusing!"], score: 5, args: ["test"])
+        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's easy. The end."], score: 10, args: ["test"])
+        let lib4 = SwiftLibObj(title: "Another Awesome SwiftLib", author: "Keegan Black", story: ["One day I had a", "and it was great for my"], score: 5, args: ["test"])
+        let tempLibs = [lib1,lib2,lib3,lib4]
         for lib in tempLibs {
             saveToFirebase(lib: lib)
         }
@@ -33,9 +34,9 @@ class SwiftLibTableViewController: UITableViewController {
     
     func saveToFirebase(lib : SwiftLibObj) {
         let usersRef = rootRef.child("Users")
-        let user = usersRef.child(lib.author)
+        let user = usersRef.child(lib.author).child("SwiftLibs")
         let values = ["Title":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
-        user.setValue(values)
+        user.childByAutoId().setValue(values)
     }
     
     func loadFromFireBase(completionHandler:@escaping (_ libArray: [SwiftLibObj]?)->()) {
@@ -48,10 +49,13 @@ class SwiftLibTableViewController: UITableViewController {
                 tempUsers.append(user)
             }
             for user in tempUsers {
-                let userSnap = snapshot.childSnapshot(forPath: user)
-                let values = userSnap.value as! [String: Any]
-                let lib = SwiftLibObj(title: values["Title"] as! String, author: user, story: values["Story"] as! [String], score: values["Score"] as! Int)
-                libs.append(lib)
+                var userSnaps = snapshot.childSnapshot(forPath: user).childSnapshot(forPath: "SwiftLibs")
+                for userSnap in userSnaps.children {
+                    let snap = userSnap as! DataSnapshot
+                    let values = snap.value as! [String: Any]
+                    let lib = SwiftLibObj(title: values["Title"] as! String, author: user, story: values["Story"] as! [String], score: values["Score"] as! Int, args: values["Arguments"] as! [String])
+                    libs.append(lib)
+                }
             }
             if libs.isEmpty {
                 completionHandler(nil)
@@ -70,8 +74,12 @@ class SwiftLibTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //loadSwiftLibs()
         loadFromFireBase { libArray in
-            self.swiftLibs = libArray ?? []
+            let temp = libArray?.sorted(by: { (lib1: SwiftLibObj, lib2: SwiftLibObj) -> Bool in
+                lib1.getScore() > lib2.getScore()
+            })
+            self.swiftLibs = temp ?? []
             self.tableView.reloadData()
         }
         tableView.dataSource = self

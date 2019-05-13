@@ -13,7 +13,7 @@ class SwiftLibObj {
     let title: String
     let author: String
     var score: Int
-    var arguments : [String] = []
+    var arguments : [String]
     let story : [String]
     
     init(title: String, author: String, story: [String]) {
@@ -21,6 +21,7 @@ class SwiftLibObj {
         self.author = author
         self.story = story
         self.score = 0
+        self.arguments = []
     }
     
     init(title: String, author: String, story: [String], score: Int) {
@@ -28,6 +29,15 @@ class SwiftLibObj {
         self.author = author
         self.story = story
         self.score = score
+        self.arguments = []
+    }
+    
+    init(title: String, author: String, story: [String], score: Int, args: [String]) {
+        self.title = title
+        self.author = author
+        self.story = story
+        self.score = score
+        self.arguments = args
     }
     
     //Function to return the title of the obj

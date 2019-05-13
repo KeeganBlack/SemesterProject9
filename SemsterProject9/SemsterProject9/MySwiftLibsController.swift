@@ -48,12 +48,16 @@ class MySwiftLibTableViewController: UITableViewController {
     
     func loadFromFireBase(completionHandler:@escaping (_ libArray: [SwiftLibObj]?)->()) {
         if(self.user != "") {
-            let userRef = rootRef.child("Users").child(self.user)
+            let userRef = rootRef.child("Users").child(self.user).child("SwiftLibs")
+            var libs:[SwiftLibObj] = []
             userRef.observe(.value, with: { (snapshot) in
-                let values = snapshot.value as! [String: Any]
-                var libs: [SwiftLibObj] = []
-                let lib = SwiftLibObj(title: values["Title"] as! String, author: self.user, story: values["Story"] as! [String], score: values["Score"] as! Int)
-                libs.append(lib)
+                //let values = snapshot.value as! [String: Any]
+                for value in snapshot.children {
+                    let snap = value as! DataSnapshot
+                    let values = snap.value as! [String: Any]
+                    let lib = SwiftLibObj(title: values["Title"] as! String, author: self.user, story: values["Story"] as! [String], score: values["Score"] as! Int, args: values["Arguments"] as! [String])
+                    libs.append(lib)
+                }
                 if libs.isEmpty {
                     completionHandler(nil)
                 }else {
@@ -73,16 +77,21 @@ class MySwiftLibTableViewController: UITableViewController {
             
             //getting the input values from user
             self.user = alertController.textFields?[0].text ?? ""
-            self.loadFromFireBase{ libArray in
-                self.swiftLibs = libArray ?? []
+            self.loadFromFireBase { libArray in
+                let temp = libArray?.sorted(by: { (lib1: SwiftLibObj, lib2: SwiftLibObj) -> Bool in
+                    lib1.getScore() > lib2.getScore()
+                })
+                self.swiftLibs = temp ?? []
                 self.tableView.reloadData()
-            }
-            //self.labelMessage.text = "Name: " + name! + "Email: " + email!
+            }            //self.labelMessage.text = "Name: " + name! + "Email: " + email!
             
         }
         
         //the cancel action doing nothing
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            let viewController: ViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! ViewController
+            self.present(viewController, animated: true, completion: nil)
+        }
         
         //adding textfields to our dialog box
         alertController.addTextField { (textField) in
