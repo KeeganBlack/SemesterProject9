@@ -177,6 +177,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Browse Other SwiftLibs" id="tRn-iC-lgc"/>
                     <connections>
+                        <outlet property="searchBar" destination="65v-gt-QF9" id="Mjs-VA-uKm"/>
                         <outlet property="searchDisplayController" destination="kSG-xX-qlv" id="eBF-5P-RnU"/>
                     </connections>
                 </tableViewController>

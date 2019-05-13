@@ -11,16 +11,16 @@ import os.log
 import Firebase
 
 class SwiftLibTableViewController: UITableViewController {
-
+    
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var swiftLibs: [SwiftLibObj] = []
-    
     let rootRef = Database.database().reference()
-    
+    var users = [String]()
     
     
     func loadSwiftLibs(){
-
-        
         let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", score: 100)
         let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", score: 100)
         let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", score: 100)
@@ -28,8 +28,7 @@ class SwiftLibTableViewController: UITableViewController {
         for lib in tempLibs {
             saveToFirebase(lib: lib)
         }
-       
-        
+       swiftLibs = tempLibs
     }
     
     func saveToFirebase(lib : SwiftLibObj) {
@@ -37,6 +36,25 @@ class SwiftLibTableViewController: UITableViewController {
         let user = usersRef.child(lib.author)
         let values = ["Titlte":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
         user.setValue(values)
+    }
+    
+    func getAllUsers() -> [String] {
+        let childRef = rootRef.child("Users")
+
+       /* childRef.observe( .value, with: { (snapshot) in
+            let values = snapshot.value as? NSDictionary
+            let count = values!.count
+            for i in 0...count {
+                self.users.append(values![i] as? String ?? "")
+            }
+            
+        })
+        print(users)*/
+        rootRef.child("Users").observeSingleEvent(of: .value) { (snapshot) in
+            //print(snapshot.key)
+            print(snapshot.value)
+        }
+        return users
     }
     
     
@@ -49,7 +67,8 @@ class SwiftLibTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         loadSwiftLibs()
-
+        getAllUsers()
+        tableView.dataSource = self
     }
 
     // MARK: - Table view data source
@@ -77,6 +96,7 @@ class SwiftLibTableViewController: UITableViewController {
         return cell
     }
     
+
 
     /*
     // Override to support conditional editing of the table view.
