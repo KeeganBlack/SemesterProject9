@@ -83,13 +83,13 @@ class MySwiftLibTableViewController: UITableViewController {
                 })
                 self.swiftLibs = temp ?? []
                 self.tableView.reloadData()
-            }            //self.labelMessage.text = "Name: " + name! + "Email: " + email!
+            }
             
         }
         
         //the cancel action doing nothing
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-            let viewController: ViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! ViewController
+            let viewController: UINavigationController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! UINavigationController
             self.present(viewController, animated: true, completion: nil)
         }
         

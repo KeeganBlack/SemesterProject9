@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dgX-Ke-qEy">
             <objects>
-                <navigationController id="Ege-rl-XEf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainViewController" id="Ege-rl-XEf" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jqC-VR-cQY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,16 +29,16 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeView" customModule="SemsterProject9" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
-                                <rect key="frame" x="48" y="209" width="279" height="432"/>
+                                <rect key="frame" x="27.5" y="209" width="320" height="432"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
-                                        <rect key="frame" x="0.0" y="0.0" width="279" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Create a SwiftLib"/>
                                         <connections>
@@ -46,15 +46,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
-                                        <rect key="frame" x="0.0" y="194" width="279" height="44"/>
+                                        <rect key="frame" x="0.0" y="194" width="320" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Search Popular SwiftLibs"/>
+                                        <state key="normal" title="Complete A Popular SwiftLib"/>
                                         <connections>
                                             <segue destination="Bbn-dP-nsm" kind="show" id="ygl-D3-bou"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-f6-cUc">
-                                        <rect key="frame" x="0.0" y="388" width="279" height="44"/>
+                                        <rect key="frame" x="0.0" y="388" width="320" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Browse By Username"/>
                                         <connections>
@@ -202,10 +202,6 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="WvF-MD-f0u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YHm-6o-CjD" secondAttribute="trailing" constant="8" symbolic="YES" id="KRL-xC-KzS"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mgH-Y2-tRO" secondAttribute="trailing" constant="20" symbolic="YES" id="rDP-ee-EHB"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <constraints>
                                     <constraint firstItem="mgH-Y2-tRO" firstAttribute="leading" secondItem="HFR-eh-FbA" secondAttribute="leading" id="08Z-t8-WgO"/>
