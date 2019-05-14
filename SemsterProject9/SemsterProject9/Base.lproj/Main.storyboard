@@ -63,12 +63,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="AppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="22C-oN-oHx">
-                                <rect key="frame" x="128" y="64" width="119" height="124"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETq-Z8-X5R">
-                                <rect key="frame" x="90" y="79" width="195" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETq-Z8-X5R">
+                                <rect key="frame" x="116" y="82" width="143" height="57"/>
                                 <attributedString key="attributedText">
                                     <fragment content="SwiftLibs">
                                         <attributes>
@@ -84,18 +80,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="1Ev-yv-qSH"/>
+                            <constraint firstItem="ETq-Z8-X5R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="5bE-Gn-NUP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yvS-Ng-coW" secondAttribute="bottom" constant="69" id="dbo-mj-saq"/>
-                            <constraint firstItem="22C-oN-oHx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kCZ-ST-JKY"/>
+                            <constraint firstItem="ETq-Z8-X5R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qDw-h9-aT9"/>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zMm-JG-dOR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outlet property="AppIconImage" destination="22C-oN-oHx" id="gyg-Tl-6ee"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="3Ar-jK-FYg"/>
                     <connections>
-                        <outlet property="AppIconImage" destination="22C-oN-oHx" id="dxZ-RZ-PtT"/>
+                        <outlet property="AppTitleLabel" destination="ETq-Z8-X5R" id="wMf-Dn-h3m"/>
                         <outletCollection property="ButtonCollection" destination="3tl-4f-FCP" collectionClass="NSMutableArray" id="Kq4-GO-xig"/>
                         <outletCollection property="ButtonCollection" destination="lyj-cV-PCR" collectionClass="NSMutableArray" id="Gc5-1K-exD"/>
                         <outletCollection property="ButtonCollection" destination="N8s-f6-cUc" collectionClass="NSMutableArray" id="xzW-an-hEa"/>
@@ -417,7 +411,4 @@
             <point key="canvasLocation" x="-10" y="1029"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="AppIcon.png" width="670" height="712"/>
-    </resources>
 </document>
