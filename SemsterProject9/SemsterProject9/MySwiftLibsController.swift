@@ -33,6 +33,15 @@ class MySwiftLibTableViewController: UITableViewController {
         return swiftLibs.count
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CompletedLibSegue" ,
+            let nextScene = segue.destination as? CompletedLibController,
+            let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedLib = swiftLibs[indexPath.row]
+            nextScene.lib = selectedLib
+        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "SwiftLibTableViewCell"

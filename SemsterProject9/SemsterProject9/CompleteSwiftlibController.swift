@@ -8,14 +8,16 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class CompleteSwiftlibController : UIViewController {
     
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var usernameOutlet: UITextField!
-    @IBOutlet weak var bodyOutlet: UITextField!
     @IBOutlet weak var titleOutlet: UITextField!
+    @IBOutlet weak var bodyOutlet: UILabel!
     
+    let rootRef = Database.database().reference()
     var lib: SwiftLibObj? = nil
     var inputArgs: [String] = []
     var storyText = ""
@@ -23,16 +25,35 @@ class CompleteSwiftlibController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showInputDialog()
+        self.titleOutlet.text = self.lib?.getTitle()
+        self.bodyOutlet.adjustsFontSizeToFitWidth = true
+        self.titleOutlet.adjustsFontSizeToFitWidth = true
     }
     
-    func mergeFunction<T>(one: [T], _ two: [T]) -> [T] {
-        let maxIndex = max(one.count, two.count)
-        var mergedArray = Array<T>()
-        for index in 0..<maxIndex {
-            if index < one.count { mergedArray.append(one[index]) }
-            if index < two.count { mergedArray.append(two[index]) }
+    @IBAction func submitPressed(_ sender: Any) {
+        var username = usernameOutlet.text
+        if username == "" || username == nil {
+            username = "Anonymous"
         }
-        return mergedArray
+        let tempLib = SwiftLibObj(title: self.lib!.title, author: username ?? "Anonymous", story: self.lib!.story, score: 0, args: self.inputArgs)
+        saveToFirebase(lib: tempLib)
+        let viewController: UINavigationController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! UINavigationController
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func saveToFirebase(lib : SwiftLibObj) {
+        let usersRef = rootRef.child("Users")
+        let user = usersRef.child(lib.author).child("SwiftLibs")
+        let values = ["Title":lib.title, "Score": 0, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
+        user.childByAutoId().setValue(values)
+    }
+    
+    func mergeFunction<T>(_ one: [T], _ two: [T]) -> [T] {
+        let commonLength = min(one.count, two.count)
+        var merged = zip(one, two).flatMap { [$0, $1] }
+        if one.count > commonLength { merged.append(one[commonLength]) }
+        if two.count > commonLength { merged.append(two[commonLength]) }
+        return merged
     }
     
     func showInputDialog() {
@@ -49,11 +70,11 @@ class CompleteSwiftlibController : UIViewController {
                 self.inputArgs.append(alertController.textFields![index].text ?? "")
             }
             let storyElements = self.lib?.getStory() ?? []
-            let story = self.mergeFunction(one: storyElements, self.inputArgs)
-            for index in 0...storyElements.count-1 {
+            let story = self.mergeFunction(storyElements, self.inputArgs)
+            for index in 0...story.count-1 {
                 self.storyText.append(contentsOf: story[index])
             }
-            print(self.storyText)
+            self.bodyOutlet.text = self.storyText
         }
         
         //the cancel action doing nothing
