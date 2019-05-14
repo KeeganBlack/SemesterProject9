@@ -32,6 +32,9 @@ class CreateSwiftLibController : UIViewController {
     
     @IBAction func ClearTextAction(_ sender: Any) {
     }
+    
+    
+
     @IBOutlet weak var Label: UILabel!
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
