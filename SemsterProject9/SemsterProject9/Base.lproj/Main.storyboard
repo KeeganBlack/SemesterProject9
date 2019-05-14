@@ -63,22 +63,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SwiftLibs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-0K-Jx8">
-                                <rect key="frame" x="174" y="85" width="82" height="22"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="AppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="22C-oN-oHx">
+                                <rect key="frame" x="128" y="64" width="119" height="124"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETq-Z8-X5R">
+                                <rect key="frame" x="90" y="79" width="195" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="SwiftLibs">
+                                        <attributes>
+                                            <color key="NSColor" red="0.11354146152734756" green="0.088081933557987213" blue="0.5028003454208374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="Chalkduster"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="22C-oN-oHx">
-                                <rect key="frame" x="48" y="64" width="103" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="1Ev-yv-qSH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yvS-Ng-coW" secondAttribute="bottom" constant="69" id="dbo-mj-saq"/>
+                            <constraint firstItem="22C-oN-oHx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kCZ-ST-JKY"/>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zMm-JG-dOR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
