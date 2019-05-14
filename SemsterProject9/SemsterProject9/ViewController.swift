@@ -14,10 +14,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var CreateSwiftButton: UIButton!
     
-    @IBAction func HitCreatButton(_ sender: Any) {
-        print("hit button")
-    }
-    
     @IBOutlet weak var SearchSwiftButton: UIButton!
     
     @IBOutlet weak var BrowseSwiftButton: UIButton!
@@ -38,7 +34,7 @@ class ViewController: UIViewController {
             button.layer.cornerRadius = 5
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.white.cgColor
-            button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+            button.setTitleColor(UIColor.darkGray, for: UIControl.State.normal)
             
             
             UIView.animate(withDuration: duration, animations: {

@@ -21,6 +21,7 @@ class CompletedLibController : UIViewController {
     var lib: SwiftLibObj? = nil
     var storyText = ""
     let rootRef = Database.database().reference()
+    var selectedFlag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +33,19 @@ class CompletedLibController : UIViewController {
         self.storyOutlet.text = self.storyText
         self.storyOutlet.adjustsFontSizeToFitWidth = true
         self.titleOutlet.adjustsFontSizeToFitWidth = true
+        self.scoreOutlet.text = String(self.lib!.getScore())
+        self.authorOutlet.text = "By: \(String(describing: self.lib!.author))"
     }
     
     @IBAction func votePressed(_ sender: Any) {
         switch voteController.selectedSegmentIndex
         {
         case 0:
-            adjustScore(direction: false)
+            //adjustScore(direction: false)
+            self.scoreOutlet.text = String(self.lib!.getScore()-1)
         case 1:
-            adjustScore(direction: true)
+            //adjustScore(direction: true)
+            self.scoreOutlet.text = String(self.lib!.getScore()+1)
         default:
             break
         }
