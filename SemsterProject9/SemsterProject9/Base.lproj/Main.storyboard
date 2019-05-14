@@ -34,8 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
-                                <rect key="frame" x="83" y="196" width="209" height="402"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="121" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
+                                <rect key="frame" x="83" y="254" width="209" height="344"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
                                         <rect key="frame" x="0.0" y="0.0" width="209" height="34"/>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
-                                        <rect key="frame" x="0.0" y="184" width="209" height="34"/>
+                                        <rect key="frame" x="0.0" y="155" width="209" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <state key="normal" title="Search Other SwiftLibs"/>
                                         <connections>
@@ -54,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-f6-cUc">
-                                        <rect key="frame" x="0.0" y="368" width="209" height="34"/>
+                                        <rect key="frame" x="0.0" y="310" width="209" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <state key="normal" title="Browse My SwiftLibs"/>
                                         <connections>
@@ -63,33 +63,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETq-Z8-X5R">
-                                <rect key="frame" x="116" y="82" width="143" height="57"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="SwiftLibs">
-                                        <attributes>
-                                            <color key="NSColor" red="0.11354146152734756" green="0.088081933557987213" blue="0.5028003454208374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="AppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="5vq-K6-WZ4">
+                                <rect key="frame" x="132" y="78" width="111" height="117"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="1Ev-yv-qSH"/>
-                            <constraint firstItem="ETq-Z8-X5R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="5bE-Gn-NUP"/>
+                            <constraint firstItem="yvS-Ng-coW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5vq-K6-WZ4" secondAttribute="bottom" constant="35" id="NhZ-aY-OoB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yvS-Ng-coW" secondAttribute="bottom" constant="69" id="dbo-mj-saq"/>
-                            <constraint firstItem="ETq-Z8-X5R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qDw-h9-aT9"/>
+                            <constraint firstItem="5vq-K6-WZ4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eTo-DI-eiN"/>
                             <constraint firstItem="yvS-Ng-coW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zMm-JG-dOR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Ar-jK-FYg"/>
                     <connections>
-                        <outlet property="AppTitleLabel" destination="ETq-Z8-X5R" id="wMf-Dn-h3m"/>
+                        <outlet property="AppIconImage" destination="5vq-K6-WZ4" id="o5Y-tf-PeX"/>
+                        <outlet property="BrowseSwiftButton" destination="N8s-f6-cUc" id="Nbf-pr-d4i"/>
+                        <outlet property="CreateSwiftButton" destination="3tl-4f-FCP" id="2qT-eA-ajN"/>
+                        <outlet property="SearchSwiftButton" destination="lyj-cV-PCR" id="Dmf-3z-htD"/>
                         <outletCollection property="ButtonCollection" destination="3tl-4f-FCP" collectionClass="NSMutableArray" id="Kq4-GO-xig"/>
                         <outletCollection property="ButtonCollection" destination="lyj-cV-PCR" collectionClass="NSMutableArray" id="Gc5-1K-exD"/>
                         <outletCollection property="ButtonCollection" destination="N8s-f6-cUc" collectionClass="NSMutableArray" id="xzW-an-hEa"/>
@@ -411,4 +404,7 @@
             <point key="canvasLocation" x="-10" y="1029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon.png" width="670" height="712"/>
+    </resources>
 </document>
