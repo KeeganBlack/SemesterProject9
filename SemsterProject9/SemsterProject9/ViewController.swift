@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var CreateSwiftButton: UIButton!
     
-    @IBOutlet weak var AppIconImage: UIImageView!
+    @IBAction func HitCreatButton(_ sender: Any) {
+        print("hit button")
+    }
     
     @IBOutlet weak var SearchSwiftButton: UIButton!
     
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
         SearchSwiftButton.backgroundColor = UIColor.ThemeColors.OceanBlue
         BrowseSwiftButton.backgroundColor = UIColor.ThemeColors.PalerBlue
         
-        var duration = 1.0
+        var duration = 0.7
         for button in ButtonCollection {
 
             button.layer.cornerRadius = 5
@@ -47,12 +49,10 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: duration, delay: 0.10, options: [.curveEaseOut], animations:{ button.frame.origin.y -= 40})
                 
             }
-            duration += 0.7
+            duration += 0.3
         }
         
-        UIView.animate(withDuration: 1.0, delay: 0.25, options: [.curveEaseIn], animations: {
-            self.AppIconImage.frame.origin.y -= 100
-            })
+       
 
 }
 }

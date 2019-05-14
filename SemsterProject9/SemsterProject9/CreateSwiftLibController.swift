@@ -12,9 +12,10 @@ import UIKit
 
 class CreateSwiftLibController : UIViewController {
     
+    
     @IBOutlet weak var TitleAction: UITextField!
     
-    @IBOutlet weak var SwiftLibStory: UITextView!
+    @IBOutlet var SwiftLibStory: UITextView!
     
     @IBOutlet weak var InsertButton: UIButton!
     
@@ -25,9 +26,11 @@ class CreateSwiftLibController : UIViewController {
     @IBOutlet var ActionButtons: [UIButton]!
     
     @IBAction func InsertBlank(_ sender: Any) {
+        self.SwiftLibStory.text = self.SwiftLibStory.text + "{BLANK}"
     }
     
     @IBAction func SubmitSwiftLib(_ sender: Any) {
+        
     }
     
     @IBAction func ClearTextAction(_ sender: Any) {
