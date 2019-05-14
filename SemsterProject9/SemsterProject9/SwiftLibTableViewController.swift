@@ -18,13 +18,14 @@ class SwiftLibTableViewController: UITableViewController {
     var swiftLibs: [SwiftLibObj] = []
     let rootRef = Database.database().reference()
     var users = [String]()
-    
+    typealias LibArrayClosure = (Array<SwiftLibObj>?) -> Void
     
     func loadSwiftLibs(){
-        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I had a", "and it was great for my"])
-        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding is swift is", "mostly because the", "is too", "or just plain confusing!"])
-        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's easy. The end."])
-        let tempLibs = [lib1,lib2,lib3]
+        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I was", "and it was great for my"], score: 0, args: ["running","health"])
+        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding in swift is", "mostly because the", "is too", "or just plain confusing!"], score: 5, args: ["crazy", "wording", "long"])
+        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's", ". The end."], score: 10, args: ["interesting"])
+        let lib4 = SwiftLibObj(title: "Another Awesome SwiftLib", author: "Keegan Black", story: ["A very", "man jumped over the", "and ran all the way home."], score: 5, args: ["tall", "moon"])
+        let tempLibs = [lib1,lib2,lib3,lib4]
         for lib in tempLibs {
             saveToFirebase(lib: lib)
         }
@@ -33,28 +34,44 @@ class SwiftLibTableViewController: UITableViewController {
     
     func saveToFirebase(lib : SwiftLibObj) {
         let usersRef = rootRef.child("Users")
-        let user = usersRef.child(lib.author)
-        let values = ["Titlte":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
-        user.setValue(values)
+        let user = usersRef.child(lib.author).child("SwiftLibs")
+        let values = ["Title":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
+        user.childByAutoId().setValue(values)
     }
     
-    func getAllUsers() -> [String] {
+    func loadFromFireBase(completionHandler:@escaping (_ libArray: [SwiftLibObj]?)->()) {
         let childRef = rootRef.child("Users")
-
-       /* childRef.observe( .value, with: { (snapshot) in
-            let values = snapshot.value as? NSDictionary
-            let count = values!.count
-            for i in 0...count {
-                self.users.append(values![i] as? String ?? "")
+        var tempUsers = [String]()
+        childRef.observe(.value, with: { (snapshot) in
+            let userDict = snapshot.value as! [String: Any]
+            var libs: [SwiftLibObj] = []
+            for user in userDict.keys {
+                tempUsers.append(user)
             }
-            
+            for user in tempUsers {
+                let userSnaps = snapshot.childSnapshot(forPath: user).childSnapshot(forPath: "SwiftLibTemplates")
+                for userSnap in userSnaps.children {
+                    let snap = userSnap as! DataSnapshot
+                    let values = snap.value as! [String: Any]
+                    let lib = SwiftLibObj(title: values["Title"] as! String, author: user, story: values["Story"] as! [String], score: values["Score"] as! Int, args: values["Arguments"] as! [String])
+                    libs.append(lib)
+                }
+            }
+            if libs.isEmpty {
+                completionHandler(nil)
+            }else {
+                completionHandler(libs)
+            }
         })
-        print(users)*/
-        rootRef.child("Users").observeSingleEvent(of: .value) { (snapshot) in
-            //print(snapshot.key)
-            print(snapshot.value)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CompleteSwiftlibSegue" ,
+            let nextScene = segue.destination as? CompleteSwiftlibController,
+            let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedLib = swiftLibs[indexPath.row]
+            nextScene.lib = selectedLib
         }
-        return users
     }
     
     
@@ -66,20 +83,22 @@ class SwiftLibTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        loadSwiftLibs()
-        getAllUsers()
+        //loadSwiftLibs()
+        loadFromFireBase { libArray in
+            let temp = libArray?.sorted(by: { (lib1: SwiftLibObj, lib2: SwiftLibObj) -> Bool in
+                lib1.getScore() > lib2.getScore()
+            })
+            self.swiftLibs = temp ?? []
+            self.tableView.reloadData()
+        }
         tableView.dataSource = self
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return swiftLibs.count
     }
 
