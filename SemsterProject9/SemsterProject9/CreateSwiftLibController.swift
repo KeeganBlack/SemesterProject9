@@ -14,15 +14,11 @@ class CreateSwiftLibController : UIViewController {
     
     
     @IBOutlet weak var TitleAction: UITextField!
-    
+    @IBOutlet weak var AuthorAction: UITextField!
     @IBOutlet var SwiftLibStory: UITextView!
-    
     @IBOutlet weak var InsertButton: UIButton!
-    
     @IBOutlet weak var ClearButtonOutlet: UIButton!
-    
     @IBOutlet weak var SubmitButtonOutlet: UIButton!
-    
     @IBOutlet var ActionButtons: [UIButton]!
     
     @IBAction func InsertBlank(_ sender: Any) {
@@ -30,18 +26,15 @@ class CreateSwiftLibController : UIViewController {
     }
     
     @IBAction func SubmitSwiftLib(_ sender: Any) {
-        
+        if let author = AuthorAction.text {
+            if let title = TitleAction.text {
+                //Store obj in firebase using the author, title, story. Score would be 0 and args would be []
+            }
+        }
     }
     
     @IBAction func ClearTextAction(_ sender: Any) {
+        self.SwiftLibStory.text = ""
     }
-    
-    
-
-    @IBOutlet weak var Label: UILabel!
-    
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }*/
     
 }
