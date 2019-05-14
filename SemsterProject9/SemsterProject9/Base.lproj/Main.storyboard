@@ -285,7 +285,7 @@
                                     <outlet property="authorOutlet" destination="elm-FW-VX6" id="7eT-lS-5iY"/>
                                     <outlet property="scoreOutlet" destination="0ww-Jj-E1w" id="9lw-wq-JyJ"/>
                                     <outlet property="titleOutlet" destination="jHS-Yl-ppK" id="X4L-Ht-bsE"/>
-                                    <segue destination="fwa-VA-878" kind="show" id="JTA-Pl-13R"/>
+                                    <segue destination="fwa-VA-878" kind="show" identifier="CompleteSwiftlibSegue" id="JTA-Pl-13R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -313,28 +313,70 @@
             </objects>
             <point key="canvasLocation" x="1044" y="-493"/>
         </scene>
-        <!--View Controller-->
+        <!--Complete Swiftlib Controller-->
         <scene sceneID="Abu-96-tec">
             <objects>
-                <viewController id="fwa-VA-878" sceneMemberID="viewController">
+                <viewController id="fwa-VA-878" customClass="CompleteSwiftlibController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZWx-Mv-Vq6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hyn-3L-x5b">
-                                <rect key="frame" x="132" y="527" width="110" height="69"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHw-5h-v6u">
+                                <rect key="frame" x="16" y="62" width="343" height="53"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ae-oUB">
+                                <rect key="frame" x="16" y="167" width="343" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="uMX-1K-6wA"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdA-kl-iEf">
+                                <rect key="frame" x="16" y="592" width="45" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9a9-kD-Oxu">
+                                <rect key="frame" x="69" y="594" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEN-cg-Uh7">
+                                <rect key="frame" x="292" y="594" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="M4s-Ae-oUB" firstAttribute="leading" secondItem="ZWx-Mv-Vq6" secondAttribute="leadingMargin" id="Gai-14-PcT"/>
+                            <constraint firstItem="M4s-Ae-oUB" firstAttribute="top" secondItem="KHw-5h-v6u" secondAttribute="bottom" constant="52" id="Luo-5U-WEx"/>
+                            <constraint firstItem="M4s-Ae-oUB" firstAttribute="trailing" secondItem="ZWx-Mv-Vq6" secondAttribute="trailingMargin" id="cCf-WK-S4T"/>
+                            <constraint firstItem="6Co-91-s8D" firstAttribute="bottom" secondItem="M4s-Ae-oUB" secondAttribute="bottom" constant="100" id="fKU-G5-j0s"/>
+                            <constraint firstItem="M4s-Ae-oUB" firstAttribute="trailing" secondItem="KHw-5h-v6u" secondAttribute="trailing" id="jJR-rc-Kqm"/>
+                            <constraint firstItem="M4s-Ae-oUB" firstAttribute="leading" secondItem="KHw-5h-v6u" secondAttribute="leading" id="oqw-Sh-Dv0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Co-91-s8D"/>
                     </view>
+                    <connections>
+                        <outlet property="bodyOutlet" destination="M4s-Ae-oUB" id="TSh-NM-SNf"/>
+                        <outlet property="submitButton" destination="VEN-cg-Uh7" id="DtR-d9-S6F"/>
+                        <outlet property="titleOutlet" destination="KHw-5h-v6u" id="4Fj-f1-7oa"/>
+                        <outlet property="usernameOutlet" destination="9a9-kD-Oxu" id="laD-jm-IDz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xv7-um-8Vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="322"/>
+            <point key="canvasLocation" x="1141.5999999999999" y="321.58920539730138"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qWN-tw-Xc8">

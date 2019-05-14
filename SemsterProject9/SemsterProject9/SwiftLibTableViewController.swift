@@ -21,10 +21,10 @@ class SwiftLibTableViewController: UITableViewController {
     typealias LibArrayClosure = (Array<SwiftLibObj>?) -> Void
     
     func loadSwiftLibs(){
-        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I was", "and it was great for my"], score: 0, args: ["Verb","Noun"])
-        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding in swift is", "mostly because the", "is too", "or just plain confusing!"], score: 5, args: ["Adjective", "Noun", "Adjective"])
-        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's easy. The end."], score: 10, args: ["test"])
-        let lib4 = SwiftLibObj(title: "Another Awesome SwiftLib", author: "Keegan Black", story: ["A very", "man jumped over the", "and ran all the way home."], score: 5, args: ["Adjective", "Noun"])
+        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I was", "and it was great for my"], score: 0, args: ["running","health"])
+        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding in swift is", "mostly because the", "is too", "or just plain confusing!"], score: 5, args: ["crazy", "wording", "long"])
+        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's", ". The end."], score: 10, args: ["interesting"])
+        let lib4 = SwiftLibObj(title: "Another Awesome SwiftLib", author: "Keegan Black", story: ["A very", "man jumped over the", "and ran all the way home."], score: 5, args: ["tall", "moon"])
         let tempLibs = [lib1,lib2,lib3,lib4]
         for lib in tempLibs {
             saveToFirebase(lib: lib)
@@ -34,7 +34,7 @@ class SwiftLibTableViewController: UITableViewController {
     
     func saveToFirebase(lib : SwiftLibObj) {
         let usersRef = rootRef.child("Users")
-        let user = usersRef.child(lib.author).child("SwiftLibTemplates")
+        let user = usersRef.child(lib.author).child("SwiftLibs")
         let values = ["Title":lib.title, "Score": lib.score, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
         user.childByAutoId().setValue(values)
     }
@@ -49,7 +49,7 @@ class SwiftLibTableViewController: UITableViewController {
                 tempUsers.append(user)
             }
             for user in tempUsers {
-                var userSnaps = snapshot.childSnapshot(forPath: user).childSnapshot(forPath: "SwiftLibTemplates")
+                let userSnaps = snapshot.childSnapshot(forPath: user).childSnapshot(forPath: "SwiftLibTemplates")
                 for userSnap in userSnaps.children {
                     let snap = userSnap as! DataSnapshot
                     let values = snap.value as! [String: Any]
@@ -63,6 +63,15 @@ class SwiftLibTableViewController: UITableViewController {
                 completionHandler(libs)
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CompleteSwiftlibSegue" ,
+            let nextScene = segue.destination as? CompleteSwiftlibController,
+            let indexPath = self.tableView.indexPathForSelectedRow {
+            let selectedLib = swiftLibs[indexPath.row]
+            nextScene.lib = selectedLib
+        }
     }
     
     
