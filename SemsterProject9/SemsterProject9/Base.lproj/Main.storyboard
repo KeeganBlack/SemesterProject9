@@ -43,7 +43,7 @@
                                         <state key="normal" title="Create a SwiftLib"/>
                                         <connections>
                                             <action selector="HitCreatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMJ-FD-q2k"/>
-                                            <segue destination="Nrh-sB-j2S" kind="show" id="jKv-wj-cFw"/>
+                                            <segue destination="Nrh-sB-j2S" kind="show" id="Wsc-Eb-LLj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
