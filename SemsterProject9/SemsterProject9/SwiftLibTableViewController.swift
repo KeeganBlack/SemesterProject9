@@ -21,11 +21,10 @@ class SwiftLibTableViewController: UITableViewController {
     typealias LibArrayClosure = (Array<SwiftLibObj>?) -> Void
     
     func loadSwiftLibs(){
-        let lib1 = SwiftLibObj(title: "My Awesome SwiftLib", author: "Keegan Black", story: ["One day I was", "and it was great for my"], score: 0, args: ["running","health"])
-        let lib2 = SwiftLibObj(title: "How to code in Swift", author: "Deepti Konduru", story: ["Coding in swift is", "mostly because the", "is too", "or just plain confusing!"], score: 5, args: ["crazy", "wording", "long"])
-        let lib3 = SwiftLibObj(title: "How to pass CSMC 434", author: "Logan Harris", story: ["I'm taking 434 next semester so I hope it's", ". The end."], score: 10, args: ["interesting"])
-        let lib4 = SwiftLibObj(title: "Another Awesome SwiftLib", author: "Keegan Black", story: ["A very", "man jumped over the", "and ran all the way home."], score: 5, args: ["tall", "moon"])
-        let tempLibs = [lib1,lib2,lib3,lib4]
+        let lib1 = SwiftLibObj(title: "Long SwiftLib", author: "Donnie Darko", story: ["I wanted to make this a super long story to show that our project is really ", " and adjusts the text size based on the length of the story. My favorite thing to do is ", " because it is a great activity and makes me feel super great even when I have to wake up early!"], score: 0, args: ["awesome","program"])
+        let lib2 = SwiftLibObj(title: "Romeo and Juliet", author: "Shakespeare", story: ["There were once two ", " lovers. Their names were Romeo and Juliet. One day they saw ", " which made them ", ". But that is just the beginning of the story..."], score: 5, args: ["crazy", "Paris", "cry"])
+        let lib3 = SwiftLibObj(title: "My Typical Day", author: "Keegan Black", story: ["I usually wake up feeling ", " at around 10 am. Then I go ", " for about 30 minutes before starting my day. Next I have breakfast, usually some ", " bananas. Then I head to my day of classes!"], score: 10, args: ["refreshed","swim", "moldy"])
+        let tempLibs = [lib1,lib2,lib3]
         for lib in tempLibs {
             saveToFirebase(lib: lib)
         }
