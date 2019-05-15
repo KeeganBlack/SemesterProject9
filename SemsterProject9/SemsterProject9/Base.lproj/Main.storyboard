@@ -34,22 +34,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="121" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
-                                <rect key="frame" x="83" y="254" width="209" height="344"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="137" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Ng-coW">
+                                <rect key="frame" x="83" y="222" width="209" height="376"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-4f-FCP">
                                         <rect key="frame" x="0.0" y="0.0" width="209" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <state key="normal" title="Create a SwiftLib">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="HitCreatButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMJ-FD-q2k"/>
-                                            <segue destination="Nrh-sB-j2S" kind="show" id="c1P-qJ-ULd"/>
+                                            <segue destination="Nrh-sB-j2S" kind="show" id="cc4-vK-3q0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
-                                        <rect key="frame" x="0.0" y="155" width="209" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyj-cV-PCR">
+                                        <rect key="frame" x="0.0" y="171" width="209" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <state key="normal" title="Search Other SwiftLibs">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +58,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-f6-cUc">
-                                        <rect key="frame" x="0.0" y="310" width="209" height="34"/>
+                                        <rect key="frame" x="0.0" y="342" width="209" height="34"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <state key="normal" title="Browse By Username">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,7 +95,7 @@
         <!--Create Swift Lib Controller-->
         <scene sceneID="7f7-t9-fQV">
             <objects>
-                <viewController id="Nrh-sB-j2S" customClass="CreateSwiftLibController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateSwiftLib" id="Nrh-sB-j2S" customClass="CreateSwiftLibController" customModule="SemsterProject9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hkz-rI-zmH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
