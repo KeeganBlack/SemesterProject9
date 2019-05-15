@@ -39,13 +39,21 @@ class ViewController: UIViewController {
             button.setTitleColor(UIColor.darkGray, for: UIControl.State.normal)
 
         }
-      
+        var imageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 80, height: 100))
+        var image = UIImage(named: "myImage.png")
+        imageView.image = image
+        self.view.addSubview(imageView)
+        
+       self.AppTitleLabel.textColor = UIColor.ThemeColors.TitleColor
        self.AppTitleLabel.font = self.AppTitleLabel.font.withSize(60.0)
        
         UIView.animate(withDuration: 1.0, delay: 0.10, options: [.curveEaseIn], animations: {
         self.AppTitleLabel.frame.origin.y -= 50
 
        })
+
+       
+       
 
 }
 }
@@ -55,6 +63,7 @@ extension UIColor{
         static let OceanBlue = UIColor(red: 177/255, green: 240/255, blue: 242/255, alpha: 1)
         static let PalerBlue = UIColor(red: 179/255, green: 223/255, blue: 243/255, alpha: 1)
         static let BlueGreen = UIColor(red: 185/255, green: 241/255, blue: 206/255, alpha: 1)
+        static let TitleColor = UIColor(red: 185/255, green: 170/255, blue: 255/255, alpha: 1)
         
     }
 }
