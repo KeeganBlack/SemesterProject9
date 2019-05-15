@@ -106,13 +106,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnR-Ez-r6Y">
-                                <rect key="frame" x="143" y="514" width="89" height="30"/>
-                                <state key="normal" title="Insert Blank"/>
-                                <connections>
-                                    <action selector="InsertBlank:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="rLv-lb-DyN"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Wdl-Fc-qoK">
+                                <rect key="frame" x="42" y="518" width="291" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KnR-Ez-r6Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
+                                        <state key="normal" title="Insert Adjective"/>
+                                        <connections>
+                                            <action selector="AdjAction:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="XnQ-cw-1vc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmv-l1-e4k">
+                                        <rect key="frame" x="121" y="0.0" width="80" height="30"/>
+                                        <state key="normal" title="Insert Noun"/>
+                                        <connections>
+                                            <action selector="NounAction:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="i1r-yU-SWf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm2-tG-4iz">
+                                        <rect key="frame" x="215" y="0.0" width="76" height="30"/>
+                                        <state key="normal" title="Insert Verb"/>
+                                        <connections>
+                                            <action selector="VerbAction:" destination="Nrh-sB-j2S" eventType="touchUpInside" id="14n-MZ-3AI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAP-2l-RCg">
                                 <rect key="frame" x="284" y="588" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
@@ -144,20 +163,19 @@
                         <constraints>
                             <constraint firstItem="JpA-pN-EQu" firstAttribute="width" secondItem="vAP-2l-RCg" secondAttribute="width" id="31h-XP-Nr8"/>
                             <constraint firstItem="0FW-fV-i19" firstAttribute="top" secondItem="GJu-ub-T65" secondAttribute="bottom" constant="19" id="3ya-HF-J8e"/>
-                            <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="KnR-Ez-r6Y" secondAttribute="bottom" constant="123" id="4tq-yU-N2X"/>
                             <constraint firstItem="GJu-ub-T65" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="191" id="7S7-lB-lzt"/>
+                            <constraint firstItem="Wdl-Fc-qoK" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="8zG-K4-AMn"/>
+                            <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="Wdl-Fc-qoK" secondAttribute="bottom" constant="119" id="EFu-UH-mtG"/>
                             <constraint firstItem="0FW-fV-i19" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="EpZ-y6-7b2"/>
                             <constraint firstItem="GJu-ub-T65" firstAttribute="top" secondItem="agt-WD-XB2" secondAttribute="top" constant="13" id="HUA-D7-NN4"/>
-                            <constraint firstItem="KnR-Ez-r6Y" firstAttribute="centerX" secondItem="agt-WD-XB2" secondAttribute="centerX" id="Jy3-Wg-qCM"/>
                             <constraint firstItem="agt-WD-XB2" firstAttribute="trailing" secondItem="GJu-ub-T65" secondAttribute="trailing" constant="16" id="NmF-0e-w9c"/>
                             <constraint firstItem="JpA-pN-EQu" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="44" id="O2z-Bh-FGq"/>
                             <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="JpA-pN-EQu" secondAttribute="bottom" constant="49" id="PTd-X9-juM"/>
+                            <constraint firstItem="Wdl-Fc-qoK" firstAttribute="top" secondItem="0FW-fV-i19" secondAttribute="bottom" constant="38" id="ThI-4k-PpQ"/>
                             <constraint firstItem="zmX-x7-fj9" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="16" id="Uin-zd-Mq2"/>
                             <constraint firstItem="JpA-pN-EQu" firstAttribute="height" secondItem="vAP-2l-RCg" secondAttribute="height" id="b19-43-aRu"/>
-                            <constraint firstItem="KnR-Ez-r6Y" firstAttribute="top" secondItem="0FW-fV-i19" secondAttribute="bottom" constant="34" id="f0O-ci-hmt"/>
                             <constraint firstItem="GJu-ub-T65" firstAttribute="leading" secondItem="zmX-x7-fj9" secondAttribute="trailing" constant="7" id="hqK-ny-5p4"/>
                             <constraint firstItem="zmX-x7-fj9" firstAttribute="top" secondItem="agt-WD-XB2" secondAttribute="top" constant="13" id="j0s-eX-7Ay"/>
-                            <constraint firstItem="KnR-Ez-r6Y" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="143" id="k41-LB-YLt"/>
                             <constraint firstItem="agt-WD-XB2" firstAttribute="trailing" secondItem="vAP-2l-RCg" secondAttribute="trailing" constant="42" id="nxm-LS-aaX"/>
                             <constraint firstItem="agt-WD-XB2" firstAttribute="bottom" secondItem="vAP-2l-RCg" secondAttribute="bottom" constant="49" id="ug1-yr-vZg"/>
                             <constraint firstItem="0FW-fV-i19" firstAttribute="leading" secondItem="agt-WD-XB2" secondAttribute="leading" constant="67" id="xVy-Gt-3nH"/>
@@ -167,13 +185,14 @@
                     <connections>
                         <outlet property="AuthorAction" destination="GJu-ub-T65" id="yQe-aG-MBd"/>
                         <outlet property="ClearButtonOutlet" destination="JpA-pN-EQu" id="ui0-or-Y1X"/>
-                        <outlet property="InsertButton" destination="KnR-Ez-r6Y" id="Swl-sU-rJl"/>
                         <outlet property="SubmitButtonOutlet" destination="vAP-2l-RCg" id="TTi-Xi-ln0"/>
                         <outlet property="SwiftLibStory" destination="0FW-fV-i19" id="0bC-AK-5up"/>
                         <outlet property="TitleAction" destination="zmX-x7-fj9" id="hAX-44-Kyd"/>
-                        <outletCollection property="ActionButtons" destination="KnR-Ez-r6Y" collectionClass="NSMutableArray" id="gNd-1J-gD2"/>
                         <outletCollection property="ActionButtons" destination="JpA-pN-EQu" collectionClass="NSMutableArray" id="x7C-aI-gyE"/>
                         <outletCollection property="ActionButtons" destination="vAP-2l-RCg" collectionClass="NSMutableArray" id="t9c-xq-4mJ"/>
+                        <outletCollection property="ActionButtons" destination="KnR-Ez-r6Y" collectionClass="NSMutableArray" id="gNd-1J-gD2"/>
+                        <outletCollection property="ActionButtons" destination="bmv-l1-e4k" collectionClass="NSMutableArray" id="TCx-wE-mYz"/>
+                        <outletCollection property="ActionButtons" destination="wm2-tG-4iz" collectionClass="NSMutableArray" id="5uD-Mk-b3U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9EZ-ap-Jj3" userLabel="First Responder" sceneMemberID="firstResponder"/>

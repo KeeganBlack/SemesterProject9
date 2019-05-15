@@ -12,6 +12,7 @@ import Firebase
 
 class CreateSwiftLibController : UIViewController {
     
+    var args : [String] = []
     
     @IBOutlet weak var TitleAction: UITextField!
     @IBOutlet weak var AuthorAction: UITextField!
@@ -21,11 +22,24 @@ class CreateSwiftLibController : UIViewController {
     @IBOutlet weak var SubmitButtonOutlet: UIButton!
     @IBOutlet var ActionButtons: [UIButton]!
     
+    @IBAction func AdjAction(_ sender: UIButton) {
+        self.SwiftLibStory.text = self.SwiftLibStory.text + " {Adjective} "
+        args.append("Adjective")
+    }
+    
+    @IBAction func NounAction(_ sender: UIButton) {
+        self.SwiftLibStory.text = self.SwiftLibStory.text + " {Noun} "
+        args.append("Noun")
+    }
+    
+    @IBAction func VerbAction(_ sender: UIButton) {
+        self.SwiftLibStory.text = self.SwiftLibStory.text + " {Verb} "
+        args.append("Verb")
+    }
+    
     let rootRef = Database.database().reference()
     
-    @IBAction func InsertBlank(_ sender: Any) {
-        self.SwiftLibStory.text = self.SwiftLibStory.text + "{BLANK}"
-    }
+    
     
     @IBAction func SubmitSwiftLib(_ sender: Any) {
         if let author = AuthorAction.text {
