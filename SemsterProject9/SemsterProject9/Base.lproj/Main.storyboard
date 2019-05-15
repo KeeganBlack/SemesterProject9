@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ege-rl-XEf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ege-rl-XEf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -270,17 +270,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.97254901959999995" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.97254901959999995" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="65v-gt-QF9">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="Bbn-dP-nsm" id="aG5-E5-1ji"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwiftLibTableViewCell" rowHeight="80" id="n4c-zA-Zkv" customClass="SwiftLibTableViewCell" customModule="SemsterProject9" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n4c-zA-Zkv" id="f6R-n6-qUH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -329,7 +321,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Browse Other SwiftLibs" id="tRn-iC-lgc"/>
                     <connections>
-                        <outlet property="searchBar" destination="65v-gt-QF9" id="Mjs-VA-uKm"/>
                         <outlet property="searchDisplayController" destination="kSG-xX-qlv" id="eBF-5P-RnU"/>
                     </connections>
                 </tableViewController>
@@ -337,7 +328,6 @@
                 <searchDisplayController id="kSG-xX-qlv">
                     <connections>
                         <outlet property="delegate" destination="Bbn-dP-nsm" id="3h5-Fu-zap"/>
-                        <outlet property="searchBar" destination="65v-gt-QF9" id="cge-Fr-kSu"/>
                         <outlet property="searchContentsController" destination="Bbn-dP-nsm" id="cGQ-sb-Ho3"/>
                         <outlet property="searchResultsDataSource" destination="Bbn-dP-nsm" id="c35-Jr-Uce"/>
                         <outlet property="searchResultsDelegate" destination="Bbn-dP-nsm" id="gEo-HD-Pzn"/>

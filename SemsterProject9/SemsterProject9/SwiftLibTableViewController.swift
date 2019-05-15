@@ -12,9 +12,6 @@ import Firebase
 
 class SwiftLibTableViewController: UITableViewController {
     
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     var swiftLibs: [SwiftLibObj] = []
     let rootRef = Database.database().reference()
     var users = [String]()

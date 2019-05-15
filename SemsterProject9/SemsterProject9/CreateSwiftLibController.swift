@@ -48,6 +48,8 @@ class CreateSwiftLibController : UIViewController {
             if let title = TitleAction.text {
                 let temp = SwiftLibObj(title: title, author: author, story: splitStory(story: SwiftLibStory.text), score: 0, args: args)
                 saveToFirebase(lib: temp)
+                let viewController: UINavigationController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! UINavigationController
+                self.present(viewController, animated: true, completion: nil)
             }
         }
     }
