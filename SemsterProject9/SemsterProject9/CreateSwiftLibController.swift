@@ -39,12 +39,23 @@ class CreateSwiftLibController : UIViewController {
     
     let rootRef = Database.database().reference()
     
-    
+    func splitStory(story: String) -> [String] {
+        return story.components(separatedBy: " ")
+    }
     
     @IBAction func SubmitSwiftLib(_ sender: Any) {
+<<<<<<< HEAD
         let author = AuthorAction.text
         let title = TitleAction.text
         saveToFirebase(lib: SwiftLibObj(title: title ?? "None", author: author ?? "Anonymous", story: <#T##[String]#>, score: <#T##Int#>, args: <#T##[String]#>))
+=======
+        if let author = AuthorAction.text {
+            if let title = TitleAction.text {
+                let temp = SwiftLibObj(title: title, author: author, story: splitStory(story: SwiftLibStory.text), score: 0, args: args)
+                saveToFirebase(lib: temp)
+            }
+        }
+>>>>>>> ac7aeeeaad8a2b7b7259c0a335a1bc964f2934c1
     }
     
     @IBAction func ClearTextAction(_ sender: Any) {
