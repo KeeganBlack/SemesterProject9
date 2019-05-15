@@ -235,6 +235,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.97254901959999995" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="mgH-Y2-tRO" firstAttribute="leading" secondItem="HFR-eh-FbA" secondAttribute="leading" id="08Z-t8-WgO"/>
                                     <constraint firstItem="WvF-MD-f0u" firstAttribute="centerY" secondItem="HFR-eh-FbA" secondAttribute="centerY" id="0Dz-n1-g3U"/>
@@ -298,6 +299,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.97254901959999995" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0ww-Jj-E1w" secondAttribute="trailing" constant="50" id="0fJ-Y5-mLK"/>
                                     <constraint firstItem="0ww-Jj-E1w" firstAttribute="centerY" secondItem="n4c-zA-Zkv" secondAttribute="centerY" id="1Lh-8z-dZr"/>
@@ -358,6 +360,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHw-5h-v6u">
                                 <rect key="frame" x="16" y="77" width="343" height="56"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="1" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <textInputTraits key="textInputTraits"/>
