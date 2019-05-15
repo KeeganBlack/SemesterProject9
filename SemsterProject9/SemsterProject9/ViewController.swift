@@ -38,6 +38,18 @@ class ViewController: UIViewController {
             button.layer.borderColor = UIColor.white.cgColor
             button.setTitleColor(UIColor.darkGray, for: UIControl.State.normal)
 
+            
+            
+          /* UIView.animate(withDuration: duration, animations: {
+                button.frame.size.width += 20
+                button.frame.size.height += 20
+            }) {
+                _ in
+                UIView.animate(withDuration: duration, delay: 0.10, options: [.curveEaseOut], animations:{ button.frame.origin.y -= 40})
+                
+            }
+            duration += 0.3
+    */
         }
         var imageView = UIImageView(frame: CGRect(x: 100, y: 100, width: 80, height: 100))
         var image = UIImage(named: "myImage.png")
