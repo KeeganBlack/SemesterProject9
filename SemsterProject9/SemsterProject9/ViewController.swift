@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
+  
     
     @IBOutlet weak var CreateSwiftButton: UIButton!
     
@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var BrowseSwiftButton: UIButton!
     @IBOutlet var ButtonCollection: [UIButton]!
+    
+    @IBOutlet weak var AppTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,20 +37,14 @@ class ViewController: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = UIColor.white.cgColor
             button.setTitleColor(UIColor.darkGray, for: UIControl.State.normal)
-            
-            
-            UIView.animate(withDuration: duration, animations: {
-                button.frame.size.width += 20
-                button.frame.size.height += 20
-            }) {
-                _ in
-                UIView.animate(withDuration: duration, delay: 0.10, options: [.curveEaseOut], animations:{ button.frame.origin.y -= 40})
-                
-            }
-            duration += 0.3
+
         }
-        
-       
+      
+        self.AppTitleLabel.font.withSize(30.0)
+       UIView.animate(withDuration: 1.0, delay: 1.0, options: [.curveEaseIn], animations: {
+        self.AppTitleLabel.frame.origin.y -= 20
+
+       })
 
 }
 }
