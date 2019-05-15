@@ -40,9 +40,10 @@ class ViewController: UIViewController {
 
         }
       
-        self.AppTitleLabel.font.withSize(30.0)
-       UIView.animate(withDuration: 1.0, delay: 1.0, options: [.curveEaseIn], animations: {
-        self.AppTitleLabel.frame.origin.y -= 20
+       self.AppTitleLabel.font = self.AppTitleLabel.font.withSize(60.0)
+       
+        UIView.animate(withDuration: 1.0, delay: 0.10, options: [.curveEaseIn], animations: {
+        self.AppTitleLabel.frame.origin.y -= 50
 
        })
 
