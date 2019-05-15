@@ -32,17 +32,17 @@ class CreateSwiftLibController : UIViewController {
     @IBOutlet var ActionButtons: [UIButton]!
     
     @IBAction func AdjAction(_ sender: UIButton) {
-        self.SwiftLibStory.text = self.SwiftLibStory.text + " {Adjective} "
+        self.SwiftLibStory.text = self.SwiftLibStory.text + " Adjective "
         args.append("Adjective")
     }
     
     @IBAction func NounAction(_ sender: UIButton) {
-        self.SwiftLibStory.text = self.SwiftLibStory.text + " {Noun} "
+        self.SwiftLibStory.text = self.SwiftLibStory.text + " Noun "
         args.append("Noun")
     }
     
     @IBAction func VerbAction(_ sender: UIButton) {
-        self.SwiftLibStory.text = self.SwiftLibStory.text + " {Verb} "
+        self.SwiftLibStory.text = self.SwiftLibStory.text + " Verb "
         args.append("Verb")
     }
     
@@ -50,7 +50,7 @@ class CreateSwiftLibController : UIViewController {
     
     func splitStory(story: String) -> [String] {
         let str = story
-        let separator = "{\\w+}"
+        let separator = "(Adjective|Noun|Verb)"
         let result = str.split(usingRegex: separator)
         return result
     }
