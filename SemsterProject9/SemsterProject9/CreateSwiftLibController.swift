@@ -76,5 +76,15 @@ class CreateSwiftLibController : UIViewController {
         let values = ["Title":lib.title, "Score": 0, "Arguments": lib.arguments, "Story": lib.story] as [String : Any]
         user.childByAutoId().setValue(values)
     }
+    override func viewDidLoad() {
+        for button in ActionButtons{
+            button.layer.cornerRadius = 5
+            button.backgroundColor = UIColor.ThemeColors.OceanBlue
+            button.layer.borderWidth = 0.5
+            button.layer.borderColor = UIColor.white.cgColor
+            button.setTitleColor(UIColor.white, for: UIControl.State.normal)
+
+        }
+    }
     
 }
