@@ -39,12 +39,15 @@ class CreateSwiftLibController : UIViewController {
     
     let rootRef = Database.database().reference()
     
-    
+    func splitStory(story: String) -> [String] {
+        return story.components(separatedBy: " ")
+    }
     
     @IBAction func SubmitSwiftLib(_ sender: Any) {
         if let author = AuthorAction.text {
             if let title = TitleAction.text {
-                //Store obj in firebase using the author, title, story. Score would be 0 and args would be []
+                let temp = SwiftLibObj(title: title, author: author, story: splitStory(story: SwiftLibStory.text), score: 0, args: args)
+                saveToFirebase(lib: temp)
             }
         }
     }
