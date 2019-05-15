@@ -42,11 +42,9 @@ class CreateSwiftLibController : UIViewController {
     
     
     @IBAction func SubmitSwiftLib(_ sender: Any) {
-        if let author = AuthorAction.text {
-            if let title = TitleAction.text {
-                //Store obj in firebase using the author, title, story. Score would be 0 and args would be []
-            }
-        }
+        let author = AuthorAction.text
+        let title = TitleAction.text
+        saveToFirebase(lib: SwiftLibObj(title: title ?? "None", author: author ?? "Anonymous", story: <#T##[String]#>, score: <#T##Int#>, args: <#T##[String]#>))
     }
     
     @IBAction func ClearTextAction(_ sender: Any) {
