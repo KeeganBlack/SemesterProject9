@@ -17,7 +17,6 @@ class CreateSwiftLibController : UIViewController {
     @IBOutlet weak var TitleAction: UITextField!
     @IBOutlet weak var AuthorAction: UITextField!
     @IBOutlet var SwiftLibStory: UITextView!
-    @IBOutlet weak var InsertButton: UIButton!
     @IBOutlet weak var ClearButtonOutlet: UIButton!
     @IBOutlet weak var SubmitButtonOutlet: UIButton!
     @IBOutlet var ActionButtons: [UIButton]!
